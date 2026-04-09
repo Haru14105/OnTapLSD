@@ -83,8 +83,8 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f0; color: #1a1a1a;
 </head>
 <body>
 <div class="header">
-  <h1>📚 Ôn tập Lịch sử Đảng Cộng sản Việt Nam</h1>
-  <p>Giáo trình 2021 — Bộ câu hỏi trắc nghiệm toàn diện</p>
+  <h1>Ôn tập Lịch sử Đảng Cộng sản Việt Nam</h1>
+  <p>Giáo trình 2021 - Bộ câu hỏi trắc nghiệm</p>
 </div>
 <div class="container">
 
@@ -830,7 +830,7 @@ function showResult() {
   const circle = document.getElementById('score-circle');
   circle.className = 'score-circle '+(pct>=70?'score-pass':'score-fail');
   circle.innerHTML = `<span>${pct}%</span>`;
-  document.getElementById('result-title').textContent = pct>=80?'Xuất sắc! 🎉':pct>=70?'Đạt! 👍':pct>=50?'Cần cố gắng thêm 📚':'Cần ôn luyện nhiều hơn 💪';
+  document.getElementById('result-title').textContent = pct>=80?'Xuất sắc!':pct>=70?'Đạt!':pct>=50?'Cần cố gắng thêm':'Cần ôn luyện nhiều hơn';
   document.getElementById('result-sub').textContent = `Hoàn thành ${total} câu – Đúng: ${state.correct}, Sai: ${state.wrong}`;
   document.getElementById('r-correct').textContent = state.correct;
   document.getElementById('r-wrong').textContent = state.wrong;
