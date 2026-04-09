@@ -103,7 +103,7 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f0; color: #1a1a1a;
   </div>
 
   <div class="card">
-    <h2>Thi theo chương</h2>
+    <h2>Ôn theo chương</h2>
     <div class="chapter-grid">
       <div class="chapter-btn" onclick="startQuiz('intro')">
         <div class="ch-title">Chương nhập môn</div>
@@ -758,7 +758,7 @@ function startQuiz(mode) {
     const weakQs = ALL_QUESTIONS.filter(q => state.weakIds.includes(q.id));
     pool = shuffle(weakQs).slice(0,Math.min(50,weakQs.length));
   } else {
-    pool = shuffle(ALL_QUESTIONS.filter(q => q.ch === mode)).slice(0,50);
+    pool = shuffle(ALL_QUESTIONS.filter(q => q.ch === mode)); // làm hết câu chương
   }
   state.session = pool;
   state.cur = 0; state.correct = 0; state.wrong = 0; state.wrongInSession = [];
