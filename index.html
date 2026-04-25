@@ -152,18 +152,17 @@ body { font-family: 'Segoe UI', sans-serif; background: #f5f5f0; color: #1a1a1a;
 /* SECTION DRILL-DOWN */
 .section-list { display:flex; flex-direction:column; gap:0.5rem; margin-bottom:0.8rem; max-height:60vh; overflow-y:auto; }
 .section-item { padding:0.8rem 1rem; border-radius:10px; border:1px solid #e0e0e0; cursor:pointer; text-align:left; background:white; transition:all 0.15s; display:flex; justify-content:space-between; align-items:flex-start; width:100%; }
-.section-group { margin-bottom:0.5rem; }
-.section-group-header { padding:0.7rem 1rem; border-radius:10px 10px 0 0; background:#fff0f0; border:1px solid #f0c0c0; border-bottom:none; font-size:0.85rem; font-weight:700; color:#b71c1c; display:flex; justify-content:space-between; align-items:center; }
-.section-group-header.no-subs { border-radius:10px; border-bottom:1px solid #f0c0c0; cursor:pointer; }
-.section-group-header.no-subs:hover { background:#ffe0e0; }
-.section-group-body { border:1px solid #f0c0c0; border-top:none; border-radius:0 0 10px 10px; overflow:hidden; }
-.section-sub-item { padding:0.65rem 1rem 0.65rem 1.4rem; border-top:1px solid #f5e0e0; background:white; cursor:pointer; text-align:left; display:flex; justify-content:space-between; align-items:flex-start; width:100%; transition:all 0.15s; }
-.section-sub-item:first-child { border-top:none; }
-.section-sub-item:hover { background:#fff8f8; }
-.section-sub-item .si-label { font-size:0.82rem; font-weight:500; color:#333; line-height:1.45; flex:1; }
-.section-sub-item .si-count { font-size:0.72rem; color:#999; white-space:nowrap; margin-left:0.6rem; }
-.section-group-all { padding:0.6rem 1rem 0.6rem 1.4rem; border-top:none; border-bottom:1px solid #f5e0e0; background:#fff8f8; cursor:pointer; text-align:left; display:flex; align-items:center; width:100%; transition:all 0.15s; font-size:0.78rem; font-weight:600; color:#b71c1c; }
-.section-group-all:hover { background:#ffe8e8; }
+.section-group { margin-bottom:0.9rem; }
+.section-group-header { padding:0.75rem 1rem; border-radius:10px; background:#fdf2f2; border:none; font-size:0.85rem; font-weight:600; color:#c0392b; display:flex; justify-content:space-between; align-items:center; margin-bottom:0.35rem; }
+.section-group-header.no-subs { cursor:pointer; }
+.section-group-header.no-subs:hover { background:#f9e5e5; }
+.section-group-body { display:flex; flex-direction:column; gap:0.25rem; padding-left:0.5rem; }
+.section-sub-item { padding:0.6rem 0.9rem; border-radius:8px; background:#fafafa; border:none; cursor:pointer; text-align:left; display:flex; justify-content:space-between; align-items:flex-start; width:100%; transition:all 0.15s; }
+.section-sub-item:hover { background:#fdf2f2; }
+.section-sub-item .si-label { font-size:0.82rem; font-weight:600; color:#2c2c2c; line-height:1.45; flex:1; }
+.section-sub-item .si-count { font-size:0.72rem; color:#aaa; white-space:nowrap; margin-left:0.6rem; }
+.section-group-all { padding:0.55rem 0.9rem; border-radius:8px; background:#fdf2f2; border:none; cursor:pointer; text-align:left; display:flex; align-items:center; width:100%; transition:all 0.15s; font-size:0.78rem; font-weight:500; color:#c0392b; margin-bottom:0.1rem; }
+.section-group-all:hover { background:#f9e5e5; }
 .section-item:hover { border-color:#b71c1c; background:#fff8f8; }
 .section-item .si-left { flex:1; }
 .section-item .si-label { font-size:0.85rem; font-weight:600; color:#1a1a1a; line-height:1.5; }
@@ -2289,7 +2288,7 @@ function openSectionView() {
       // Nút toàn bộ mục
       const allBtn = document.createElement('button');
       allBtn.className = 'section-group-all';
-      allBtn.innerHTML = `↳ Toàn bộ mục (${secCount} câu)`;
+      allBtn.innerHTML = `Toàn bộ mục (${secCount} câu)`;
       allBtn.onclick = () => {
         document.getElementById('chapter-modal').classList.remove('active');
         startQuizByFilter(sec.filter, 'Ôn – Mục ' + sec.label + ' – ' + sec.name);
