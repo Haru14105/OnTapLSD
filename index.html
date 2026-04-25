@@ -2674,17 +2674,20 @@ const PAGE_SIZE = 10;
 
 function startExamTimer() {
   examState.secondsLeft = 3600;
+  examState._timerStartAt = Date.now();
+  examState._timerTotalSeconds = 3600;
   updateTimerDisplay();
   if (examState.timerInterval) clearInterval(examState.timerInterval);
   examState.timerInterval = setInterval(() => {
-    examState.secondsLeft--;
+    const elapsed = Math.floor((Date.now() - examState._timerStartAt) / 1000);
+    examState.secondsLeft = Math.max(0, examState._timerTotalSeconds - elapsed);
     updateTimerDisplay();
     if (examState.secondsLeft <= 0) {
       clearInterval(examState.timerInterval);
       examState.timerInterval = null;
       autoSubmitExam();
     }
-  }, 1000);
+  }, 500);
 }
 
 function stopExamTimer() {
